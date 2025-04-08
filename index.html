@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forever 19</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero {
+      background-image: url('https://source.unsplash.com/featured/?nightclub,luxury');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Age Verification Modal -->
+  <div id="ageModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    <div class="bg-gray-800 p-8 rounded-lg text-center max-w-md">
+      <h2 class="text-2xl font-bold mb-4">Age Verification</h2>
+      <p class="mb-4">You must be 18 years or older to enter this site.</p>
+      <button onclick="document.getElementById('ageModal').style.display='none'" class="bg-pink-600 px-4 py-2 rounded hover:bg-pink-700">I am 18+</button>
+    </div>
+  </div>
+
+  <header class="bg-black bg-opacity-70 shadow-lg fixed top-0 w-full z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold text-pink-500">Forever 19</h1>
+      <nav>
+        <a href="#services" class="mx-2 text-white hover:text-pink-400">Services</a>
+        <a href="#gallery" class="mx-2 text-white hover:text-pink-400">Gallery</a>
+        <a href="#contact" class="mx-2 text-white hover:text-pink-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero h-screen flex items-center justify-center text-center text-white pt-20">
+    <div class="bg-black bg-opacity-60 p-10 rounded-lg">
+      <h2 class="text-5xl font-extrabold text-pink-400 mb-4">Welcome to Forever 19</h2>
+      <p class="text-xl text-gray-200">Rockdale's Premier Adult Entertainment Destination</p>
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <section id="services" class="mb-16 text-center">
+      <h3 class="text-3xl font-bold text-pink-400 mb-6">Services & Rates</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2 text-pink-300">30 mins</h4>
+          <p class="text-lg text-white">$100</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2 text-pink-300">1 Hour</h4>
+          <p class="text-lg text-white">$200</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2 text-pink-300">Premium Service</h4>
+          <p class="text-lg text-white">$600</p>
+        </div>
+      </div>
+      <p class="mt-6 text-gray-400">Location: Rockdale, Australia</p>
+      <p class="mt-2 text-gray-400">Ladies: Susmi, Rosey, Kirpa, Anuka, Rose, Lilly</p>
+    </section>
+
+    <section id="gallery" class="mb-16">
+      <h3 class="text-3xl font-bold text-pink-400 mb-6 text-center">Gallery</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="dd.jpg" alt="Gallery Image 1" class="rounded-xl shadow-lg">
+        <img src="mf.jpg" alt="Gallery Image 2" class="rounded-xl shadow-lg">
+        <img src="https://source.unsplash.com/featured/?luxury" alt="Gallery Image 3" class="rounded-xl shadow-lg">
+      </div>
+    </section>
+
+    <section id="contact" class="text-center">
+      <h3 class="text-3xl font-bold text-pink-400 mb-6">Contact & Booking</h3>
+      <p class="mb-4 text-gray-300 text-lg">📞 0467 897 66<br>✉️ rocky@gmail.com</p>
+      <form class="bg-gray-800 p-6 rounded-lg shadow-md max-w-xl mx-auto mt-6">
+        <input class="w-full p-3 mb-4 border border-gray-600 rounded bg-gray-700 text-white" type="text" placeholder="Your Name" required/>
+        <input class="w-full p-3 mb-4 border border-gray-600 rounded bg-gray-700 text-white" type="email" placeholder="you@example.com" required/>
+        <textarea class="w-full p-3 mb-4 border border-gray-600 rounded bg-gray-700 text-white" rows="4" placeholder="Your inquiry..." required></textarea>
+        <button class="bg-pink-600 text-white px-6 py-3 rounded hover:bg-pink-700 w-full" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-black text-center text-gray-500 py-6 mt-10">
+    &copy; 2025 Forever 19. All rights reserved. | For adults 18+ only.
+  </footer>
+
+  <script>
+    if (sessionStorage.getItem("ageVerified")) {
+      document.getElementById("ageModal").style.display = "none";
+    }
+    document.querySelector("#ageModal button").addEventListener("click", () => {
+      sessionStorage.setItem("ageVerified", true);
+    });
+  </script>
+
+</body>
+</html>
